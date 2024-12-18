@@ -13,7 +13,7 @@ function Header() {
             alt="The Item Store"
             width="80"
             height="80"
-            className="rounded"
+            className="rounded d-none d-sm-block"
           />
         </Navbar.Brand>
 

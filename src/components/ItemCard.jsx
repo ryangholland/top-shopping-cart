@@ -3,7 +3,7 @@ import { FaStar, FaShoppingCart } from "react-icons/fa";
 
 function ItemCard({ item }) {
   return (
-    <Card className="text-center p-2" style={{height: "415px"}}>
+    <Card className="text-center p-2" style={{ minHeight: "415px" }}>
       <Card.Img
         variant="top"
         src={item.image}
@@ -16,10 +16,9 @@ function ItemCard({ item }) {
       />
       <Card.Body className="d-flex justify-content-center align-items-center">
         <Card.Title className="fs-6 fw-bold">{item.title}</Card.Title>
-
       </Card.Body>
       <Card.Footer className="bg-white">
-      <Card.Text className="fs-5 mb-0">${item.price}</Card.Text>
+        <Card.Text className="fs-5 mb-0">${item.price}</Card.Text>
         <Card.Text>
           <FaStar />
           <FaStar />
