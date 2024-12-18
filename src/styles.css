@@ -27,7 +27,8 @@ a.active {
   z-index: 2;
 }
 
-.about-section {
+.about-section,
+.item-page-section {
   height: 85vh;
 }
 
