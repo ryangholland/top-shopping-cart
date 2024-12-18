@@ -15,20 +15,22 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <div className="d-flex flex-column min-vh-100">
+          <Header />
 
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/store" element={<StorePage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/item/:id" element={<ItemPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
+          <main className="flex-grow-1">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/store" element={<StorePage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/item/:id" element={<ItemPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </main>
 
-        <Footer />
+          <Footer />
+        </div>
       </BrowserRouter>
     </>
   );
