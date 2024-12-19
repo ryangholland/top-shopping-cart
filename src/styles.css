@@ -28,7 +28,8 @@ a.active {
 }
 
 .about-section,
-.item-page-section {
+.item-page-section,
+.cart-page-section {
   min-height: 85vh;
 }
 

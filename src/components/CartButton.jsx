@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FaShoppingCart } from "react-icons/fa";
@@ -26,13 +27,14 @@ function CartButton() {
         <Offcanvas.Title className="text-center w-100">
           <h5>Subtotal:</h5>
           <h3 className="fw-bold">$999.99</h3>
-          <Button variant="success">Go to Cart</Button>
+          <Button variant="success" as={Link} to="/cart" onClick={handleClose}>
+            Go to Cart
+          </Button>
         </Offcanvas.Title>
         <hr className="mt-4 mb-2" />
         <Offcanvas.Body>
           <CartItem />
           <CartItem />
-          
         </Offcanvas.Body>
       </Offcanvas>
     </>

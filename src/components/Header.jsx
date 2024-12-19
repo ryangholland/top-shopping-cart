@@ -32,9 +32,6 @@ function Header() {
 
         <Nav>
           <CartButton />
-          {/* <Nav.Link as={Link} to="/cart">
-            <FaShoppingCart size={36} />
-          </Nav.Link> */}
         </Nav>
       </Container>
     </Navbar>
