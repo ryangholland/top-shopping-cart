@@ -29,7 +29,7 @@ a.active {
 
 .about-section,
 .item-page-section {
-  height: 85vh;
+  min-height: 85vh;
 }
 
 .about-text {

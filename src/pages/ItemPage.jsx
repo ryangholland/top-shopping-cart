@@ -6,26 +6,26 @@ import { Container, Row, Col, Image, Button } from "react-bootstrap";
 
 function ItemPage() {
   const { id } = useParams();
-  const dummyItem = dummyData[0];
+  const dummyItem = dummyData[id];
 
   return (
     <section className="item-page-section d-flex align-items-center bg-light">
       <Container className="item-page-container  text-center bg-white w-auto p-4 rounded">
-        <Row xs={1} sm={2} className="g-4">
+        <Row xs={1} sm={1} md={2} className="g-4">
           <Col className="d-flex justify-content-center align-items-center">
             <Image
               src={dummyItem.image}
               alt={dummyItem.title}
               fluid
-              className="d-none d-sm-block"
+              className="d-none d-md-block"
               style={{ height: "50vh", width: "auto" }}
             />
             {/* For extra-small screens */}
             <Image
               src={dummyItem.image}
               alt={dummyItem.title}
-              className="d-block d-sm-none"
-              style={{ height: "40vh", width: "auto" }}
+              className="d-block d-md-none"
+              style={{ height: "30vh", width: "auto" }}
             />
           </Col>
           <Col className="text-start d-flex flex-column justify-content-between">

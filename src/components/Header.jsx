@@ -1,7 +1,8 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
-
 import { Link, NavLink } from "react-router-dom";
+
+import CartButton from "./CartButton";
 
 function Header() {
   return (
@@ -30,9 +31,10 @@ function Header() {
         </Nav>
 
         <Nav>
-          <Nav.Link as={Link} to="/cart">
+          <CartButton />
+          {/* <Nav.Link as={Link} to="/cart">
             <FaShoppingCart size={36} />
-          </Nav.Link>
+          </Nav.Link> */}
         </Nav>
       </Container>
     </Navbar>
