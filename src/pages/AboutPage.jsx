@@ -10,7 +10,7 @@ function AboutPage() {
         </p>
         <hr />
         <p className="about-text fs-5">
-          Item data courtesy of <a href="https://fakestoreapi.com/">Fake API</a>
+          Item data courtesy of <a href="https://fakestoreapi.com/">Fake Store API</a>
         </p>
         <hr />
         <p className="about-text fs-5">
