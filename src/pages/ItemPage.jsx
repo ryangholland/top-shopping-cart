@@ -8,7 +8,7 @@ import { Container, Row, Col, Image, Button, Spinner } from "react-bootstrap";
 function ItemPage() {
   const { items, loading, error } = useContext(ItemContext);
   const { id } = useParams();
-  const item = items[id];
+  const item = items[id - 1];
 
   if (loading) {
     return (

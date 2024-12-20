@@ -36,3 +36,13 @@ a.active {
 .about-text {
   max-width: 350px;
 }
+
+.hover-opacity {
+  text-decoration: none;
+}
+
+.hover-opacity:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
