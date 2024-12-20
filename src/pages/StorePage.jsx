@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import dummyData from "../assets/dummyData";
 
-import ItemCard from "../components/ItemCard";
+import StorePageItem from "../components/Item/StorePageItem";
 
 function StorePage() {
   return (
@@ -10,7 +10,7 @@ function StorePage() {
         <Row xs={1} sm={2} md={3} lg={4} className="g-4">
           {dummyData.map((item) => (
             <Col key={item.id}>
-              <ItemCard item={item} />
+              <StorePageItem item={item} />
             </Col>
           ))}
         </Row>

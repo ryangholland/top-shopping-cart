@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { FaShoppingCart } from "react-icons/fa";
-import CartItem from "./CartItem";
+import CartItem from "./Item/CartItem";
 
 function CartButton() {
   const [show, setShow] = useState(false);

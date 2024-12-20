@@ -1,7 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import dummyData from "../assets/dummyData";
 
-import CartPageItem from "../components/CartPageItem";
+import CartPageItem from "../components/Item/CartPageItem";
 
 function CartPage() {
   const dummyItem = dummyData[0];

@@ -1,8 +1,7 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { FaShoppingCart } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 
-import CartButton from "./CartButton";
+import Cart from "./Cart";
 
 function Header() {
   return (
@@ -31,7 +30,7 @@ function Header() {
         </Nav>
 
         <Nav>
-          <CartButton />
+          <Cart />
         </Nav>
       </Container>
     </Navbar>

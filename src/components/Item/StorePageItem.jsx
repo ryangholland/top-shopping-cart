@@ -1,7 +1,7 @@
 import { Card, Button } from "react-bootstrap";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
 
-function ItemCard({ item }) {
+function StorePageItem({ item }) {
   return (
     <Card className="text-center p-2" style={{ minHeight: "415px" }}>
       <Card.Img
@@ -34,4 +34,4 @@ function ItemCard({ item }) {
   );
 }
 
-export default ItemCard;
+export default StorePageItem;
