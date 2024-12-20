@@ -4,3 +4,7 @@ export function truncateString(input) {
   }
   return input.slice(0, 20) + "...";
 }
+
+export function formatPrice(number) {
+  return number.toFixed(2);
+}

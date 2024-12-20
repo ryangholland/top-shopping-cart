@@ -1,4 +1,5 @@
 import { Row, Col, Card } from "react-bootstrap";
+import { formatPrice } from "../../utils/utils";
 
 function CartPageItem({ item }) {
   return (
@@ -15,7 +16,7 @@ function CartPageItem({ item }) {
             }}
           ></Card.Img>
           <Card.Body className="pb-1">
-            <Card.Text className="fw-bold">${item.price}</Card.Text>
+            <Card.Text className="fw-bold">${formatPrice(item.price)}</Card.Text>
           </Card.Body>
         </Col>
         <Col>

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import dummyData from "../assets/dummyData";
+import { formatPrice } from "../utils/utils";
 
 import { FaShoppingCart } from "react-icons/fa";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
@@ -31,7 +32,7 @@ function ItemPage() {
           <Col className="text-start d-flex flex-column justify-content-between">
             <div>
               <h1>{dummyItem.title}</h1>
-              <h2>${dummyItem.price}</h2>
+              <h2>${formatPrice(dummyItem.price)}</h2>
               <hr />
               <p>{dummyItem.description}</p>
             </div>

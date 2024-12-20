@@ -1,5 +1,6 @@
 import { Card, Button } from "react-bootstrap";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
+import { formatPrice } from "../../utils/utils";
 
 function StorePageItem({ item }) {
   return (
@@ -18,7 +19,7 @@ function StorePageItem({ item }) {
         <Card.Title className="fs-6 fw-bold">{item.title}</Card.Title>
       </Card.Body>
       <Card.Footer className="bg-white">
-        <Card.Text className="fs-5 mb-0">${item.price}</Card.Text>
+        <Card.Text className="fs-5 mb-0">${formatPrice(item.price)}</Card.Text>
         <Card.Text>
           <FaStar />
           <FaStar />

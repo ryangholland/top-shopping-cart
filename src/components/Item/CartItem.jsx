@@ -2,7 +2,7 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
 
 import dummyData from "../../assets/dummyData";
-import { truncateString } from "../../utils/utils";
+import { truncateString, formatPrice } from "../../utils/utils";
 import Counter from "./Counter";
 
 function CartItem() {
@@ -22,7 +22,7 @@ function CartItem() {
             }}
           ></Card.Img>
           <Card.Body className="pb-1">
-            <Card.Text className="fw-bold">${dummyItem.price}</Card.Text>
+            <Card.Text className="fw-bold">${formatPrice(dummyItem.price)}</Card.Text>
           </Card.Body>
         </Col>
         <Col xs={7} className=" text-center">
