@@ -17,5 +17,6 @@ export function calculateSubtotal(cart) {
 
 export function getQuantity(cart, id) {
   const item = cart.find((item) => item.id === id);
+  if (!item) return null;
   return item.quantity;
 }

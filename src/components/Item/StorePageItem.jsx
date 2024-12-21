@@ -1,13 +1,15 @@
 import { Card, Button } from "react-bootstrap";
 import { FaStar, FaShoppingCart } from "react-icons/fa";
-import { formatPrice } from "../../utils/utils";
+import { formatPrice, getQuantity } from "../../utils/utils";
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
+import Counter from "./Counter";
 
 function StorePageItem({ item }) {
-  const { addToCart } = useContext(CartContext);
+  const { cart, addToCart } = useContext(CartContext);
+  const quantity = getQuantity(cart, item.id);
 
   return (
     <Card className="text-center p-2" style={{ minHeight: "415px" }}>
@@ -42,13 +44,17 @@ function StorePageItem({ item }) {
           <FaStar />
           <FaStar />
         </Card.Text>
-        <Button
-          variant="success"
-          className="d-flex align-items-center mx-auto"
-          onClick={() => addToCart(item)}
-        >
-          <FaShoppingCart className="me-2" /> Add to Cart
-        </Button>
+        {!quantity ? (
+          <Button
+            variant="success"
+            className="d-flex align-items-center mx-auto"
+            onClick={() => addToCart(item)}
+          >
+            <FaShoppingCart className="me-2" /> Add to Cart
+          </Button>
+        ) : (
+          <Counter item={item} />
+        )}
       </Card.Footer>
     </Card>
   );

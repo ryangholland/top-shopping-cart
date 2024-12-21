@@ -2,7 +2,6 @@ import { Button, ButtonGroup } from "react-bootstrap";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import { getQuantity } from "../../utils/utils";
-import { FaTrash } from "react-icons/fa";
 
 const Counter = ({ item }) => {
   const { cart, addToCart, removeOneFromCart } = useContext(CartContext);
@@ -24,7 +23,7 @@ const Counter = ({ item }) => {
       </Button>
 
       {/* Increase Button */}
-      <Button variant="outline-secondary" onClick={() => addToCart(item)}>
+      <Button variant="outline-secondary" onClick={() => addToCart(item)} >
         +
       </Button>
     </ButtonGroup>
