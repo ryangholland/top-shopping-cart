@@ -1,12 +1,12 @@
 import { Card, Button, Row, Col } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
-
-import dummyData from "../../assets/dummyData";
 import { truncateString, formatPrice } from "../../utils/utils";
 import Counter from "./Counter";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 
-function CartItem() {
-  const dummyItem = dummyData[0];
+function CartItem({ item }) {
+  const { removeAllFromCart } = useContext(CartContext);
 
   return (
     <Card className="p-2 mb-2">
@@ -14,7 +14,7 @@ function CartItem() {
         <Col className="d-flex flex-column justify-content-center align-items-center">
           <Card.Img
             variant="top"
-            src={dummyItem.image}
+            src={item.image}
             style={{
               width: "100px",
               height: "100px",
@@ -22,16 +22,22 @@ function CartItem() {
             }}
           ></Card.Img>
           <Card.Body className="pb-1">
-            <Card.Text className="fw-bold">${formatPrice(dummyItem.price)}</Card.Text>
+            <Card.Text className="fw-bold">
+              ${formatPrice(item.price)}
+            </Card.Text>
           </Card.Body>
         </Col>
         <Col xs={7} className=" text-center">
           <Card.Body className="d-flex flex-column align-items-center">
             <Card.Title className="fs-6">
-              {truncateString(dummyItem.title)}
+              {truncateString(item.title)}
             </Card.Title>
-            <Counter />
-            <Button variant="danger" className="d-flex align-items-center mt-2">
+            <Counter item={item} />
+            <Button
+              variant="danger"
+              className="d-flex align-items-center mt-2"
+              onClick={() => removeAllFromCart(item.id)}
+            >
               <FaTrash className="me-2" /> Delete
             </Button>
           </Card.Body>

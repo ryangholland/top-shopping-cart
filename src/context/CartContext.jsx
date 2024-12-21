@@ -7,7 +7,6 @@ const cartReducer = (state, action) => {
     case "ADD_TO_CART": {
       const existingItem = state.find((item) => item.id === action.payload.id);
 
-      console.log("adding to cart...");
       if (existingItem) {
         // Increase quantity of existing item
         return state.map((item) =>
@@ -21,7 +20,7 @@ const cartReducer = (state, action) => {
       return [...state, { ...action.payload, quantity: 1 }];
     }
 
-    case "REMOVE_FROM_CART": {
+    case "REMOVE_ONE_FROM_CART": {
       const existingItem = state.find((item) => item.id === action.payload.id);
       const numberInCart = existingItem.quantity;
 
@@ -34,6 +33,11 @@ const cartReducer = (state, action) => {
         );
       }
 
+      // Remove item by ID
+      return state.filter((item) => item.id !== action.payload.id);
+    }
+
+    case "REMOVE_ALL_FROM_CART": {
       // Remove item by ID
       return state.filter((item) => item.id !== action.payload.id);
     }
@@ -51,12 +55,18 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: "ADD_TO_CART", payload: item });
   };
 
-  const removeFromCart = (id) => {
-    dispatch({ type: "REMOVE_FROM_CART", payload: { id } });
+  const removeOneFromCart = (id) => {
+    dispatch({ type: "REMOVE_ONE_FROM_CART", payload: { id } });
+  };
+
+  const removeAllFromCart = (id) => {
+    dispatch({ type: "REMOVE_ALL_FROM_CART", payload: { id } });
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, removeOneFromCart, removeAllFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );

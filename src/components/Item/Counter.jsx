@@ -1,37 +1,30 @@
-import { useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
+import { getQuantity } from "../../utils/utils";
+import { FaTrash } from "react-icons/fa";
 
-const Counter = () => {
-  const [count, setCount] = useState(1);
-
-  const handleIncrement = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const handleDecrement = () => {
-    if (count > 1) {
-      setCount((prevCount) => prevCount - 1);
-    }
-  };
+const Counter = ({ item }) => {
+  const { cart, addToCart, removeOneFromCart } = useContext(CartContext);
+  const quantity = getQuantity(cart, item.id);
 
   return (
     <ButtonGroup size="md">
       {/* Decrease Button */}
       <Button
         variant="outline-secondary"
-        onClick={handleDecrement}
-        disabled={count <= 1}
+        onClick={() => removeOneFromCart(item.id)}
       >
         -
       </Button>
 
       {/* Display Current Count */}
       <Button variant="outline-dark" className="fw-bold" disabled>
-        {count}
+        {quantity}
       </Button>
 
       {/* Increase Button */}
-      <Button variant="outline-secondary" onClick={handleIncrement}>
+      <Button variant="outline-secondary" onClick={() => addToCart(item)}>
         +
       </Button>
     </ButtonGroup>
