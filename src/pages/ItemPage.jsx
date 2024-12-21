@@ -1,8 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useContext } from "react";
 import { formatPrice } from "../utils/utils";
 import ItemContext from "../context/ItemContext";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaArrowLeft } from "react-icons/fa";
 import { Container, Row, Col, Image, Button, Spinner } from "react-bootstrap";
 
 function ItemPage() {
@@ -23,8 +23,10 @@ function ItemPage() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <section className="item-page-section d-flex align-items-center bg-light">
+    <section className="item-page-section d-flex flex-column justify-content-center  bg-light">
+      
       <Container className="item-page-container  text-center bg-white w-auto p-4 rounded">
+        
         <Row xs={1} sm={1} md={2} className="g-4">
           <Col className="d-flex justify-content-center align-items-center">
             <Image
@@ -60,6 +62,9 @@ function ItemPage() {
             </div>
           </Col>
         </Row>
+      </Container>
+      <Container className="ps-4 my-3">
+        <Button variant="secondary" as={Link} to={"/store"}><FaArrowLeft /> Back to Store</Button>
       </Container>
     </section>
   );
