@@ -20,3 +20,7 @@ export function getQuantity(cart, id) {
   if (!item) return null;
   return item.quantity;
 }
+
+export function getTotalItems(cart) {
+  return cart.reduce((total, item) => total + item.quantity, 0)
+}

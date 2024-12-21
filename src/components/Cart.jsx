@@ -11,7 +11,6 @@ import CartContext from "../context/CartContext";
 
 function CartButton() {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
