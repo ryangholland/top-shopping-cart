@@ -3,7 +3,12 @@ import { FaStar, FaShoppingCart } from "react-icons/fa";
 import { formatPrice } from "../../utils/utils";
 import { Link } from "react-router-dom";
 
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
+
 function StorePageItem({ item }) {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <Card className="text-center p-2" style={{ minHeight: "415px" }}>
       <Link to={`/item/${item.id}`}>
@@ -24,7 +29,6 @@ function StorePageItem({ item }) {
           className="fs-6 fw-bold hover-opacity"
           as={Link}
           to={`/item/${item.id}`}
-          
         >
           {item.title}
         </Card.Title>
@@ -38,7 +42,11 @@ function StorePageItem({ item }) {
           <FaStar />
           <FaStar />
         </Card.Text>
-        <Button variant="success" className="d-flex align-items-center mx-auto">
+        <Button
+          variant="success"
+          className="d-flex align-items-center mx-auto"
+          onClick={() => addToCart(item)}
+        >
           <FaShoppingCart className="me-2" /> Add to Cart
         </Button>
       </Card.Footer>
