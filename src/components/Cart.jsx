@@ -2,10 +2,11 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import Badge from "react-bootstrap/Badge";
 import { FaShoppingCart } from "react-icons/fa";
 import CartItem from "./Item/CartItem";
 
-import { calculateSubtotal } from "../utils/utils";
+import { calculateSubtotal, getTotalItems } from "../utils/utils";
 
 import CartContext from "../context/CartContext";
 
@@ -18,8 +19,17 @@ function CartButton() {
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={handleShow}>
+      <Button
+        variant="outline-secondary"
+        onClick={handleShow}
+        className="position-relative"
+      >
         <FaShoppingCart size={36} />
+        {cart.length > 0 && (
+          <Badge bg="secondary" className="position-absolute">
+            {getTotalItems(cart)}
+          </Badge>
+        )}
       </Button>
 
       <Offcanvas
