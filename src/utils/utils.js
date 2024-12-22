@@ -6,7 +6,7 @@ export function truncateString(input) {
 }
 
 export function formatPrice(number) {
-  return number.toFixed(2);
+  return number.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 export function calculateSubtotal(cart) {
