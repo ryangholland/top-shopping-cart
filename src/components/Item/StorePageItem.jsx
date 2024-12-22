@@ -1,11 +1,12 @@
 import { Card, Button } from "react-bootstrap";
-import { FaStar, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { formatPrice, getQuantity } from "../../utils/utils";
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import Counter from "./Counter";
+import ItemRating from "./ItemRating";
 
 function StorePageItem({ item }) {
   const { cart, addToCart } = useContext(CartContext);
@@ -38,11 +39,8 @@ function StorePageItem({ item }) {
       <Card.Footer className="bg-white">
         <Card.Text className="fs-5 mb-0">${formatPrice(item.price)}</Card.Text>
         <Card.Text>
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
+          
+          <ItemRating rating={item.rating.rate} />
         </Card.Text>
         {!quantity ? (
           <Button

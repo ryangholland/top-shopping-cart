@@ -7,6 +7,7 @@ import { Container, Row, Col, Image, Button, Spinner } from "react-bootstrap";
 
 import CartContext from "../context/CartContext";
 import Counter from "../components/Item/Counter";
+import ItemRating from "../components/Item/ItemRating";
 
 function ItemPage() {
   const { cart, addToCart } = useContext(CartContext);
@@ -51,6 +52,7 @@ function ItemPage() {
             <div>
               <h1>{item.title}</h1>
               <h2>${formatPrice(item.price)}</h2>
+              <ItemRating rating={item.rating.rate} />
               <hr />
               <p>{item.description}</p>
             </div>
