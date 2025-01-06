@@ -6,7 +6,7 @@ a.active {
 .home-section {
   position: relative;
   height: 85vh;
-  background-image: url(./bg.jpg);
+  background-image: url(/bg.jpg);
   background-size: cover;
   background-position: center;
 }
